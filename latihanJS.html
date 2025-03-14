@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan Javascript</title>
+</head>
+<body>
+    <h1>Latihan Javascript</h1>
+    <p id="showText"></p>
+    <button onclick="showText()">tampilkan Text</button>
+    <hr/>
+    <button onclick="hitungLuasLingkaran(10)">Hitung Luas Lingkaran</button>
+    <hr/>
+    <input type="number" id="jariLingkaran"/>
+    <p id="showLuas"></p>
+    <button onclick="hitungLuasLingkaran3()">Hitung Luas Lingkaran2</button>
+    <hr/>
+    <!-- PERSEGI -->
+    <input type="number" id="panjang" onchange ="hitungLuasPersegiPanjang2()" placeholder="panjang persegi panjang"/>
+    <input type="number" id="lebar" onchange="hitungLuasPersegiPanjang2()" placeholder="lebar persegi panjang"/>
+    <p id="showLuasPersegiPanjang"></p>
+    <button onclick="hitungLuasPersegiPanjang2()">Hitung luas persegi panjang</button>
+    <p onmouseover="alert ('Anjay')"> Arahkan mouse ke sini</p>
+    <script>
+        function showText(){
+            console.log ('my first javascript');
+            alert ('my first javascript');
+            document.getElementById ('showText').innerHTML ="Show Text ya.";
+        }
+        //prosedur
+        function hitungLuasLingkaran(r) {
+            //input -> r
+            //proses
+            var luas = 3.14*r*r;
+            //output
+            document.getElementById ('showText').innerHTML = luas;
+        }
+        //fungsi
+        function hitungLuasLingkaran2(r) {
+            //input
+            //proses
+            var luas = 3.14*r*r;
+            //output
+            return luas;
+        }
+        //prsedur
+        function hitungLuasLingkaran3() {
+            //input
+            var jari2 =document.getElementById('jariLingkaran'). value;
+            //proses
+            if (jari2 ==''){
+                alert ('jari-jari masih kosong. silanhkan dilengkapi');
+            }else {
+                var luas = hitungLuasLingkaran2(jari2);
+            //output
+            document.getElementById ('showLuas').innerHTML = luas;
+        }
+    }
+
+    //persegi
+        {
+            function hitungLuasPersegiPanjang(panjang, lebar){
+                var luas = panjang*lebar;
+                return luas;
+            }
+        }
+        function hitungLuasPersegiPanjang2() {
+            //input
+            var panjang = document.getElementById('panjang'). value;
+            var lebar = document.getElementById('lebar'). value;
+            var luas = hitungLuasPersegiPanjang(panjang , lebar);
+            
+            //output
+            document.getElementById ('showLuasPersegiPanjang').innerHTML = luas;
+        
+    }
+
+
+    </script>
+</body>
+</html>

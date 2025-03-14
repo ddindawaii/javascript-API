@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="hide">Hide</button><button id="show">Show</button>
+    <button id="fadeIn">Fade in</button><button id="fadeOut">Fade Out</button>
+    <p>Paragraf</p>
+    <input type="number" id="number"/>
+    <p id="showNumber"></p>
+    <button id="btnShowNumber">Show Number</button>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        // $(document).ready(function(){
+        // })
+        $ (function(){
+            //fungsi pertama
+            $('#hide').click(function(){
+                $('p').hide();
+            })
+            //fungsi kedua
+            $('#show').click(function(){
+                $('p').show();
+            })
+            //fungsi ketiga
+            $('#fadeIn').click(function(){
+                $('p').fadeIn();
+            })
+            //fungsi keempat
+            $('#fadeOut').click(function(){
+                $('p').fadeOut();
+            })
+
+            $('#btnShowNumber').click(function(){
+                //javascript
+                //var number =  document.getElementById('shouNumber').innnerHTML =number
+                //jquery
+                var number= $('#number'). val();
+                $('#showNumber').html(number);
+            })
+        })
+    </script>
+</body>
+</html>
