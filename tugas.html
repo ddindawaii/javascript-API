@@ -13,121 +13,109 @@
     <div class="container">
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addSiswaModal" data-bs-whatever="@mdo">
             <i class="fa-solid fa-plus"></i>Tambah Data</button>
-            <div id="loading" class="text-center my-4" style="display :none;">
-                <div class="spinner-border text-primary" role="status">
-                    <span class="visually-hidden">Loading...</span>
-                </div>
+        <div id="loading" class="text-center my-4" style="display :none;">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
             </div>
-    <table class="table table-striped" id="siswaTable">
-        <thead>
-            <tr class="table-dark">
-                <th>id</th>
-                <th>NAMA</th>
-                <th>Email</th>
-                <th>Alamat</th>
-                <th>AKSI</th>
-            </tr>
-        </thead>
-        <tbody>
-            
-        </tbody>
-    </table>
+        </div>
+        <table class="table table-striped" id="siswaTable">
+            <thead>
+                <tr class="table-dark">
+                    <th>id</th>
+                    <th>NAMA</th>
+                    <th>Email</th>
+                    <th>Alamat</th>
+                    <th>AKSI</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
 
-    <!-- akan ditampilkan jika tidak ada data -->
+        <!-- akan ditampilkan jika tidak ada data -->
         <div id="empatyMessage" class="alert alert-warning text-center" style="display: none;">Data siswa tidak tersedia</div>
     </div>
     
     <!-- form tambah -->
-        <div class="modal fade" id="addSiswaModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="addSiswaModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Tambah Data</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form id="siswaForm">
-                <div class="mb-2">
-                    <label for="nama_siswa" class="col-form-label">Nama</label>
-                    <input type="text" placeholder="Masukan Nama" class="form-control" id="nama_siswa" name="nama_siswa">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Tambah Data</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="mb-2">
-                    <label for="email_siswa" class="col-form-label">Email</label>
-                    <input type="email" placeholder="Masukan email" class="form-control" id="email_siswa" name="email_siswa">
+                <div class="modal-body">
+                    <form id="siswaForm">
+                        <div class="mb-2">
+                            <label for="nama_siswa" class="col-form-label">Nama</label>
+                            <input type="text" placeholder="Masukan Nama" class="form-control" id="nama_siswa" name="nama_siswa">
+                        </div>
+                        <div class="mb-2">
+                            <label for="email_siswa" class="col-form-label">Email</label>
+                            <input type="email" placeholder="Masukan email" class="form-control" id="email_siswa" name="email_siswa">
+                        </div>
+                        <div class="mb-2">
+                            <label for="alamat_siswa" class="col-form-label">Alamat</label>
+                            <textarea type="text" placeholder="Masukan alamat" class="form-control" id="alamat_siswa" name="alamat_siswa"></textarea>
+                        </div>
+                    </form>
                 </div>
-                <div class="mb-2">
-                    <label for="alamat_siswa" class="col-form-label">Alamat</label>
-                    <textarea type="text" placeholder="Masukan alamat" class="form-control" id="alamat_siswa" name="alamat_siswa"></textarea>
-                </div>
-                
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                    <button type="submit" class="btn btn-primary" id="saveSiswa">Simpan</button>
+                </div> 
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                <button type="submit" class="btn btn-primary">Simpan</button>
-                <!-- <button type="button" class="btn btn-primary">Simpan</button> -->
-            </div> 
-            </div>
-        </div>
-        </form>
-        </div>
-
-
-
-    <!-- edit -->
-    <div class="modal fade" id="editSiswa" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Data</h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <form>
-                <div class="mb-2">
-                  <label for="recipient-name" class="col-form-label">Nama</label>
-                  <input type="text" placeholder="Masukan Nama" class="form-control" id="recipient-name">
-                </div>
-                <div class="mb-2">
-                  <label for="recipient-name" class="col-form-label">Email</label>
-                  <input type="email" placeholder="Masukan email" class="form-control" id="recipient-name">
-                </div>
-                <div class="mb-2">
-                  <label for="message-text" class="col-form-label">Alamat</label>
-                  <textarea type="text" placeholder="Masukan alamat" class="form-control" id="recipient-name"></textarea>
-                </div>
-              </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-              <button type="button" class="btn btn-primary">Perbaharui</button>
-            </div>
-          </div>
         </div>
     </div>
+
+    <!-- Edit modal -->
+    <div class="modal fade" id="editSiswa" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Data</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="editSiswaForm">
+                        <div class="mb-2">
+                            <label for="editNama" class="col-form-label">Nama</label>
+                            <input type="text" placeholder="Masukan Nama" class="form-control" id="editNama" name="editNama">
+                        </div>
+                        <div class="mb-2">
+                            <label for="editEmail" class="col-form-label">Email</label>
+                            <input type="email" placeholder="Masukan email" class="form-control" id="editEmail" name="editEmail">
+                        </div>
+                        <div class="mb-2">
+                            <label for="editAlamat" class="col-form-label">Alamat</label>
+                            <textarea type="text" placeholder="Masukan alamat" class="form-control" id="editAlamat" name="editAlamat"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                    <button type="button" class="btn btn-primary" id="updateSiswa">Perbaharui</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <!-- jika jquery sudah ready -->
     <script>
         $(document).ready(function(){
             loadSiswa();
+
+            // Load data siswa
             function loadSiswa(){
-                //menggunakan ajax
                 $.ajax({
                     url: "https://mytechs.my.id/data_siswa_api/apiSiswa.php",
                     type: "GET",
                     dataType: "json",
                     success: function(data){
-                        console.log(data);
-                        //element dengan id loading akan disembunyikan
                         $("#loading").hide();
-                        //data pada id siswaTable tbody akan dikosongkan
                         $("#siswaTable tbody").empty();
-                        //akan mengecek data, apakah ada isinya apa tida
                         if(data.length > 0){
-                            // alert('Data ada isinya');
-                            //akan looping sebanyak jumlah data
                             data.forEach(function (siswa){
-                                //setiap kali looping akan menambahkan satu baris(tr)
-                                //pada #siswaTable tbody
                                 $("#siswaTable tbody").append(`
                                     <tr>
                                         <td>${siswa.id_siswa}</td>
@@ -135,91 +123,114 @@
                                         <td>${siswa.email_siswa}</td>
                                         <td>${siswa.alamat_siswa}</td>
                                         <td class="text-center">
-                                            <button type="button" class="btn btn-sm btn-info" data-id="${siswa.id_siswa}" 
-                                            data-bs-toggle="modal" data-bs-target="#editSiswa" data-bs-whatever="@mdo">
+                                            <button type="button" class="btn btn-sm btn-info edit-btn" data-id="${siswa.id_siswa}" 
+                                            data-bs-toggle="modal" data-bs-target="#editSiswa">
                                                 <i class="fa-light fa-pen-to-square"></i>Edit</button>
-                                            <button type="button" class="btn btn-sm btn-danger btn-sm delete-btn" data-id="${siswa.id_siswa}">
+                                            <button type="button" class="btn btn-sm btn-danger delete-btn" data-id="${siswa.id_siswa}">
                                                 <i class="fa-solid fa-trash"></i>Hapus</a>
                                         </td>
                                     </tr>
-                                `)
-
-                            })
-                        } 
-                        else{
-                            $("#emptyMessage").show();
+                                `);
+                            });
+                        } else {
+                            $("#empatyMessage").show();
                         }
                     },
                     error: function() {
-
+                        alert("Gagal memuat data siswa.");
                     }
-                })
-                }
-            
-                //triger untuk menjalankan submit pada form
-                $("#siswaForm").submit(function (e){
-                    //menghalangi agar submit pada form tidak dijalankan
-                    e.preventDefault();
+                });
+            }
 
+            // Form tambah siswa
+            $("#siswaForm").submit(function(e){
+                e.preventDefault();
+                $.ajax({
+                    url: "https://mytechs.my.id/data_siswa_api/apiSiswa.php",
+                    type: "POST",
+                    data: new FormData(this),
+                    processData: false,
+                    contentType: false,
+                    success: function(data){
+                        var success = data.success;
+                        if (success) {
+                            alert("Siswa berhasil ditambahkan!");
+                            $("#addSiswaModal").modal("hide");
+                            loadSiswa();
+                            $("#siswaForm")[0].reset();
+                        } else {
+                            alert(data.message);
+                        }
+                    },
+                    error: function() {
+                        alert("Gagal menambahkan siswa.");
+                    }
+                });
+            });
+
+            // Edit siswa
+            $(document).on("click", ".edit-btn", function() {
+                var id_siswa = $(this).data("id");
+                $.ajax({
+                    url: "https://mytechs.my.id/data_siswa_api/apiSiswa.php",
+                    type: "GET",
+                    data: {id_siswa: id_siswa},
+                    success: function(data){
+                        $("#editNama").val(data.nama_siswa);
+                        $("#editEmail").val(data.email_siswa);
+                        $("#editAlamat").val(data.alamat_siswa);
+                        $("#updateSiswa").data("id", id_siswa); // Store the id in the button
+                    }
+                });
+            });
+
+            // Update siswa
+            $("#updateSiswa").click(function() {
+                var id_siswa = $(this).data("id");
+                var updatedData = {
+                    id_siswa: id_siswa,
+                    nama_siswa: $("#editNama").val(),
+                    email_siswa: $("#editEmail").val(),
+                    alamat_siswa: $("#editAlamat").val()
+                };
+
+                $.ajax({
+                    url: "https://mytechs.my.id/data_siswa_api/apiSiswa.php",
+                    type: "PUT",
+                    contentType: "application/json",
+                    data: JSON.stringify(updatedData),
+                    success: function(data){
+                        alert("Data siswa berhasil diperbarui!");
+                        $("#editSiswa").modal("hide");
+                        loadSiswa();
+                    },
+                    error: function(){
+                        alert("Gagal memperbarui data siswa.");
+                    }
+                });
+            });
+
+            // Hapus siswa
+            $(document).on("click", ".delete-btn", function(){
+                var id_siswa = $(this).data("id");
+                if(confirm("Yakin ingin menghapus?")) {
                     $.ajax({
                         url: "https://mytechs.my.id/data_siswa_api/apiSiswa.php",
-                        type: "POST",
-                        data: new FormData(this),
-                        processData: false,
-                        contentType: false,
-                        success: function (data){
-                          var success = data.success;
-                          if (success) {
-                            //memunculkan pesan
-                            alert("Siswa berhasil ditambahkan!");
-                            //menyembunyikan modal tambah
-                            $("#addSiswaModal").modal("hide");
-                            //menload tabel dengan data terbaru
+                        type: "DELETE",
+                        contentType: "application/json",
+                        data: JSON.stringify({id_siswa: id_siswa}),
+                        success: function() {
+                            alert("Siswa berhasil dihapus!");
                             loadSiswa();
-                            //menghapus data pada halaman form tambah
-                            $("#siswaForm")[0].reset();
-                          }else {
-                            alert(data.message);
-                          }
                         },
                         error: function() {
-                            //jika gagal menjalankan ajax
-                            alert("Gagal menambahkan siswa.");
+                            alert("Gagal menghapus siswa.");
                         }
-                    })
-            })
-    
-
-                        //tombo delete
-                        $(document).on("click",".delete-btn", function(){
-                            //mengambil parameter id(data-id) untuk disimpan dlam var id_siswa
-                            var id_siswa = $(this).data("id");
-                            if (confirm ("yakin ingin menghapus?")){
-                                //jiks user menekan tombol ok
-                                $.ajax({
-                                    url:"https://mytechs.my.id/data_siswa_api/apiSiswa.php",
-                                    type:"DELETE",
-                                    contentType:"aplication/json",
-                                    //JSON.stringify : mengubah objek javasript ke dalam format JSON
-                                    data: JSON.stringify({
-                                        id_siswa:id_siswa,
-                                    }),
-                                    success: function(data){
-                                        alert("Siswa berhasil dihapus!");
-                                        loadSiswa();
-                                    },
-                                    error: function(){
-                                        alert("Siswa gagal dihapus");
-                                    }
-                                    
-                                })
-
-                            }
-                        })
-                    })
-                
+                    });
+                }
+            });
+        });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    </script>
 </body>
 </html>
